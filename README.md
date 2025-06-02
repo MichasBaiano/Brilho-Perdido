@@ -24,7 +24,7 @@ Nenhum! Basta fazer o download do jogo.
 ### Instalação
 
 1. Acesse o nosso site oficial (link em breve).
-2. Baixe a versão compatível com sua plataforma (Windows, Linux, etc.).
+2. Baixe a versão compatível com sua plataforma (Windows, Android, etc.).
 3. Execute o arquivo baixado e comece a jogar!
 
 > ⚠️ Certifique-se de permitir a execução se o seu sistema solicitar.
@@ -35,19 +35,14 @@ Nenhum! Basta fazer o download do jogo.
 
 ## 🧠 Equipe
 
-Desenvolvido por **Capelão da Mata** compostos por:
+Desenvolvido por **Capelão da Mata**, composto por:
 
-Ananias Carlos Ferreira Filho
-
-Antonio Hittalo Ramyres Paulo Rodrigues Macedo
-
-Bento Kauê de Sousa Lima
-
-João Manuel da Silva Paulo
-
-Michel Ferreira da Silva Júnior
-
-Sidney de Sousa Nascimento
+- Ananias Carlos Ferreira Filho  
+- Antonio Hittalo Ramyres Paulo Rodrigues Macedo  
+- Bento Kauê de Sousa Lima  
+- João Manuel da Silva Paulo  
+- Michel Ferreira da Silva Júnior  
+- Sidney de Sousa Nascimento  
 
 ## 📜 Licença
 
