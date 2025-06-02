@@ -36,11 +36,17 @@ Nenhum! Basta fazer o download do jogo.
 ## 🧠 Equipe
 
 Desenvolvido por **Capelão da Mata** compostos por:
+
 Ananias Carlos Ferreira Filho
+
 Antonio Hittalo Ramyres Paulo Rodrigues Macedo
+
 Bento Kauê de Sousa Lima
+
 João Manuel da Silva Paulo
+
 Michel Ferreira da Silva Júnior
+
 Sidney de Sousa Nascimento
 
 ## 📜 Licença
