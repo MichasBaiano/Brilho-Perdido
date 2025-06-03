@@ -19,5 +19,10 @@ public class JogadorMoveState : JogadorState
     public override void Update()
     {
         base.Update();
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            Debug.Log("Eu estou Funcionando");
+            stateMachine.ChangeState(jogador.inativo);
+        }
     }
 }

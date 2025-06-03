@@ -22,6 +22,7 @@ public class JogadorState
     public virtual void Update()
     {
         Debug.Log("Eu estou " + nomeAnimation);
+        
     }
 
     public virtual void Exit() 
