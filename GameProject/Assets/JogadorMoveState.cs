@@ -19,9 +19,10 @@ public class JogadorMoveState : JogadorState
     public override void Update()
     {
         base.Update();
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            Debug.Log("Eu estou Funcionando");
+
+        jogador.setVelocidade(xInput * jogador.andarVelocidade, rb.linearVelocity.y);
+
+        if(xInput == 0) { 
             stateMachine.ChangeState(jogador.inativo);
         }
     }

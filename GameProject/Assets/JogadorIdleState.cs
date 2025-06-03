@@ -20,9 +20,7 @@ public class JogadorIdleState : JogadorState
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            Debug.Log("Eu estou Funcionando");
+        if(xInput != 0) { 
             stateMachine.ChangeState(jogador.mexido);
         }
     }

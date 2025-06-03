@@ -5,6 +5,9 @@ public class JogadorState
     protected Jogador jogador; 
     protected JogadorStateMachine stateMachine;
 
+    protected Rigidbody2D rb;
+
+    protected float xInput;
     private string nomeAnimation;
 
     public JogadorState(Jogador _jogador, JogadorStateMachine _stateMachine, string _nomeAnimation)
@@ -17,12 +20,12 @@ public class JogadorState
     public virtual void Enter() 
     {
         jogador.anim.SetBool(nomeAnimation, true);
+        rb = jogador.rb;
     }
 
     public virtual void Update()
     {
-        Debug.Log("Eu estou " + nomeAnimation);
-        
+        xInput = Input.GetAxisRaw("Horizontal");   
     }
 
     public virtual void Exit() 
