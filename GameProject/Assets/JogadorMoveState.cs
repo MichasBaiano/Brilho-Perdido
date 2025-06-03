@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class JogadorMoveState : JogadorState
+public class JogadorMoveState : JogadorChaoState
 {
     public JogadorMoveState(Jogador _jogador, JogadorStateMachine _stateMachine, string _nomeAnimation) : base(_jogador, _stateMachine, _nomeAnimation)
     {

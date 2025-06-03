@@ -5,7 +5,7 @@ public class JogadorState
     protected Jogador jogador; 
     protected JogadorStateMachine stateMachine;
 
-    protected Rigidbody2D rb;
+    protected Rigidbody2D  rb;
 
     protected float xInput;
     private string nomeAnimation;
@@ -26,6 +26,8 @@ public class JogadorState
     public virtual void Update()
     {
         xInput = Input.GetAxisRaw("Horizontal");   
+
+        jogador.anim.SetFloat("yVelocidade", rb.linearVelocityY);
     }
 
     public virtual void Exit() 
