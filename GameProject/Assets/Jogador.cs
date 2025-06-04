@@ -8,6 +8,13 @@ public class Jogador : MonoBehaviour
     public float andarVelocidade = 12f;
     public float forcaPulo;
 
+    [Header("Dash Info")]
+    [SerializeField] private float dashCooldown;
+    private float dashTempoUsado;
+    public float dashVelocidade;
+    public float dashDuracao;
+    public float dashDirecao {  get; private set; }
+
     [Header("Colisao Info")]
     [SerializeField] private Transform chaoCheck;
     [SerializeField] private Transform paredeCheck;
@@ -29,6 +36,7 @@ public class Jogador : MonoBehaviour
     public JogadorMoveState mexido{ get; private set; }
     public JogadorPuloState pulo{ get; private set; }
     public JogadorArState ar {  get; private set; }
+    public JogadorDashState dash { get; private set; }
     #endregion
 
     private void Awake()
@@ -39,6 +47,9 @@ public class Jogador : MonoBehaviour
         mexido = new JogadorMoveState(this, maquina, "mexido");
         pulo = new JogadorPuloState(this, maquina, "pulo");
         ar = new JogadorArState(this, maquina, "pulo");
+        dash = new JogadorDashState(this, maquina, "dash");
+
+         caraDirecao = 1;
     }
 
     private void Start()
@@ -53,6 +64,24 @@ public class Jogador : MonoBehaviour
     private void Update()
     {
         maquina.atualState.Update();
+        checkDashInput();
+    }
+
+
+    public void checkDashInput()
+    {
+        dashTempoUsado -= Time.deltaTime;
+
+        if (Input.GetKeyDown(KeyCode.LeftShift) && dashTempoUsado < 0)
+        {
+            dashTempoUsado = dashCooldown;
+            dashDirecao = Input.GetAxisRaw("Horizontal");
+
+            if (dashDirecao == 0)
+                dashDirecao = caraDirecao;
+
+            maquina.MudarState(dash);
+        }
     }
 
     public void setVelocidade(float _xVelocidade, float _yVelocidade)

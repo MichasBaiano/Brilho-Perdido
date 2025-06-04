@@ -20,9 +20,12 @@ public class JogadorChaoState : JogadorState
     {
         base.Update();
 
+        if (!jogador.chaoDetectado())
+            maquina.MudarState(jogador.ar);
+
         if (Input.GetKeyDown(KeyCode.Space) && jogador.chaoDetectado())
         {
-            stateMachine.ChangeState(jogador.pulo);
+            maquina.MudarState(jogador.pulo);
         }
     }
 }

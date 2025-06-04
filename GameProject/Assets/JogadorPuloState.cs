@@ -24,7 +24,7 @@ public class JogadorPuloState : JogadorState
 
         if (rb.linearVelocityY < 0)
         {
-            stateMachine.ChangeState(jogador.ar);
+            maquina.MudarState(jogador.ar);
         }
     }
 }

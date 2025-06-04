@@ -23,7 +23,7 @@ public class JogadorMoveState : JogadorChaoState
         jogador.setVelocidade(xInput * jogador.andarVelocidade, rb.linearVelocity.y);
 
         if(xInput == 0) { 
-            stateMachine.ChangeState(jogador.inativo);
+            maquina.MudarState(jogador.inativo);
         }
     }
 }

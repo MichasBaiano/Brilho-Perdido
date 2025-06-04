@@ -21,7 +21,7 @@ public class JogadorIdleState : JogadorChaoState
         base.Update();
 
         if(xInput != 0) { 
-            stateMachine.ChangeState(jogador.mexido);
+            maquina.MudarState(jogador.mexido);
         }
     }
 }

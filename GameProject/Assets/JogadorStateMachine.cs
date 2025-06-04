@@ -12,7 +12,7 @@ public class JogadorStateMachine
         atualState.Enter();
     }
 
-    public void ChangeState(JogadorState _novoState)
+    public void MudarState(JogadorState _novoState)
     {
         atualState.Exit();
         atualState = _novoState;

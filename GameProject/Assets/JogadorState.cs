@@ -3,17 +3,19 @@ using UnityEngine;
 public class JogadorState
 {
     protected Jogador jogador; 
-    protected JogadorStateMachine stateMachine;
+    protected JogadorStateMachine maquina;
 
     protected Rigidbody2D  rb;
 
     protected float xInput;
     private string nomeAnimation;
 
-    public JogadorState(Jogador _jogador, JogadorStateMachine _stateMachine, string _nomeAnimation)
+    protected float tempoState;
+
+    public JogadorState(Jogador _jogador, JogadorStateMachine _maquina, string _nomeAnimation)
     {
         this.jogador = _jogador;
-        this.stateMachine = _stateMachine;
+        this.maquina = _maquina;
         this.nomeAnimation = _nomeAnimation;
     }
 
@@ -25,8 +27,9 @@ public class JogadorState
 
     public virtual void Update()
     {
-        xInput = Input.GetAxisRaw("Horizontal");   
+        tempoState -= Time.deltaTime;
 
+        xInput = Input.GetAxisRaw("Horizontal");   
         jogador.anim.SetFloat("yVelocidade", rb.linearVelocityY);
     }
 

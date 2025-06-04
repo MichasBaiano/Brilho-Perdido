@@ -23,7 +23,7 @@ public class JogadorArState : JogadorState
 
         if (jogador.chaoDetectado())
         {
-            stateMachine.ChangeState(jogador.inativo);
+            maquina.MudarState(jogador.inativo);
         }
     }
 }
