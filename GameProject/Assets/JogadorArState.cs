@@ -25,7 +25,7 @@ public class JogadorArState : JogadorState
             maquina.MudarState(jogador.wall);
 
         if (xInput != 0)
-            jogador.setVelocidade(jogador.andarVelocidade * 0.8f, rb.linearVelocityY);
+            jogador.setVelocidade(jogador.andarVelocidade * 0.8f * xInput, rb.linearVelocityY);
 
         if (jogador.chaoDetectado())
         {
