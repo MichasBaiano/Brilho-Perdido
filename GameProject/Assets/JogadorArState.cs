@@ -21,6 +21,12 @@ public class JogadorArState : JogadorState
     {
         base.Update();
 
+        if (jogador.paredeDetectado())
+            maquina.MudarState(jogador.wall);
+
+        if (xInput != 0)
+            jogador.setVelocidade(jogador.andarVelocidade * 0.8f, rb.linearVelocityY);
+
         if (jogador.chaoDetectado())
         {
             maquina.MudarState(jogador.inativo);

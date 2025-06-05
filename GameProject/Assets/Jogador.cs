@@ -37,6 +37,7 @@ public class Jogador : MonoBehaviour
     public JogadorPuloState pulo{ get; private set; }
     public JogadorArState ar {  get; private set; }
     public JogadorDashState dash { get; private set; }
+    public JogadorWallSlideState wall { get; private set; }
     #endregion
 
     private void Awake()
@@ -48,6 +49,7 @@ public class Jogador : MonoBehaviour
         pulo = new JogadorPuloState(this, maquina, "pulo");
         ar = new JogadorArState(this, maquina, "pulo");
         dash = new JogadorDashState(this, maquina, "dash");
+        wall = new JogadorWallSlideState(this, maquina, "wall");
 
          caraDirecao = 1;
     }
@@ -90,6 +92,7 @@ public class Jogador : MonoBehaviour
         FlipController(_xVelocidade);
     }
     public bool chaoDetectado() => Physics2D.Raycast(chaoCheck.position, Vector2.down, chaoCheckDistancia, eChao);
+    public bool paredeDetectado() => Physics2D.Raycast(paredeCheck.position, Vector2.right * caraDirecao, paredeCheckDistancia, eChao);
 
     private void OnDrawGizmos()
     {

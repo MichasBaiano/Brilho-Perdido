@@ -802,6 +802,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   andarVelocidade: 6
   forcaPulo: 20
+  dashCooldown: 1
+  dashVelocidade: 10
+  dashDuracao: 1.3
   chaoCheck: {fileID: 151383820}
   paredeCheck: {fileID: 370960100}
   chaoCheckDistancia: 0.26

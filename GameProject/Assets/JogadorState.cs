@@ -8,6 +8,7 @@ public class JogadorState
     protected Rigidbody2D  rb;
 
     protected float xInput;
+    protected float yInput;
     private string nomeAnimation;
 
     protected float tempoState;
@@ -29,7 +30,8 @@ public class JogadorState
     {
         tempoState -= Time.deltaTime;
 
-        xInput = Input.GetAxisRaw("Horizontal");   
+        xInput = Input.GetAxisRaw("Horizontal");
+        yInput = Input.GetAxisRaw("Vertical");
         jogador.anim.SetFloat("yVelocidade", rb.linearVelocityY);
     }
 
