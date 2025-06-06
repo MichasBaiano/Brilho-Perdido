@@ -15,7 +15,7 @@ public class ParallaxBackground : MonoBehaviour
     void LateUpdate()
     {
         Vector3 deltaMovement = cam.position - lastCamPosition;
-        transform.position += new Vector3(deltaMovement.x * parallaxEffect, deltaMovement.y * parallaxEffect, transform.position.y);
+        transform.position += new Vector3(deltaMovement.x * parallaxEffect, deltaMovement.y * parallaxEffect, transform.position.z);
         lastCamPosition = cam.position;
     }
 }
