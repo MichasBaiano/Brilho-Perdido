@@ -29,6 +29,9 @@ public class JogadorWallSlideState : JogadorState
         if (xInput != 0 && jogador.caraDirecao != xInput)
             maquina.MudarState(jogador.inativo);
 
+        if (!jogador.paredeDetectado())
+            maquina.MudarState(jogador.inativo);
+
         if (yInput < 0)
             rb.linearVelocity = new Vector2(0, rb.linearVelocityY);
         else
