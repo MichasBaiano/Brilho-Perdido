@@ -20,6 +20,12 @@ public class JogadorWallSlideState : JogadorState
     {
         base.Update();
 
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            maquina.MudarState(jogador.wallPulo);
+            return;
+        }
+
         if (xInput != 0 && jogador.caraDirecao != xInput)
             maquina.MudarState(jogador.inativo);
 

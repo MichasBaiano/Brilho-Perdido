@@ -41,5 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Fundo
+    uniqueID: 2332177185
+    locked: 0
+  - name: Chao
+    uniqueID: 693843183
+    locked: 0
+  - name: Inimigo
+    uniqueID: 3355703077
+    locked: 0
+  - name: Jogador
+    uniqueID: 773533007
+    locked: 0
   m_RenderingLayers:
   - Default

@@ -24,7 +24,7 @@ public class JogadorWallJumpState : JogadorState
         base.Update();
 
         if (tempoState < 0)
-            maquina.MudarState(jogador.pulo);
+            maquina.MudarState(jogador.ar);
 
         if (jogador.chaoDetectado())
             maquina.MudarState(jogador.inativo);
