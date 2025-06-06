@@ -26,6 +26,9 @@ public class JogadorDashState : JogadorState
 
         jogador.setVelocidade(jogador.dashVelocidade * jogador.dashDirecao, 0);
 
+        if (!jogador.chaoDetectado() && jogador.paredeDetectado())
+            maquina.MudarState(jogador.inativo);
+
         if (tempoState < 0)
             maquina.MudarState(jogador.inativo);
     }

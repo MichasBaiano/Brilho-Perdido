@@ -38,6 +38,7 @@ public class Jogador : MonoBehaviour
     public JogadorArState ar {  get; private set; }
     public JogadorDashState dash { get; private set; }
     public JogadorWallSlideState wall { get; private set; }
+    public JogadorWallJumpState wallPulo { get; private set; }
     #endregion
 
     private void Awake()
@@ -50,6 +51,7 @@ public class Jogador : MonoBehaviour
         ar = new JogadorArState(this, maquina, "pulo");
         dash = new JogadorDashState(this, maquina, "dash");
         wall = new JogadorWallSlideState(this, maquina, "wall");
+        wallPulo = new JogadorWallJumpState(this, maquina, "pulo");
 
          caraDirecao = 1;
     }
@@ -72,6 +74,9 @@ public class Jogador : MonoBehaviour
 
     public void checkDashInput()
     {
+        if (paredeDetectado())
+            return;
+
         dashTempoUsado -= Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.LeftShift) && dashTempoUsado < 0)
