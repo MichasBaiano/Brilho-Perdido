@@ -17,14 +17,14 @@ public class JogadorDashState : JogadorState
     {
         base.Exit();
 
-        jogador.setVelocidade(0, rb.linearVelocityY);
+        jogador.SetVelocidade(0, rb.linearVelocityY);
     }
 
     public override void Update()
     {
         base.Update();
 
-        jogador.setVelocidade(jogador.dashVelocidade * jogador.dashDirecao, 0);
+        jogador.SetVelocidade(jogador.dashVelocidade * jogador.dashDirecao, 0);
 
         if (!jogador.chaoDetectado() && jogador.paredeDetectado())
             maquina.MudarState(jogador.inativo);

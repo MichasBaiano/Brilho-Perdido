@@ -11,7 +11,7 @@ public class JogadorWallJumpState : JogadorState
         base.Enter();
 
         tempoState = .4f;
-        jogador.setVelocidade(5 * -jogador.caraDirecao, jogador.forcaPulo);
+        jogador.SetVelocidade(5 * -jogador.caraDirecao, jogador.forcaPulo);
     }
 
     public override void Exit()

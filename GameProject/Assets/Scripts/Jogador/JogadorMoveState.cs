@@ -20,7 +20,7 @@ public class JogadorMoveState : JogadorChaoState
     {
         base.Update();
 
-        jogador.setVelocidade(xInput * jogador.andarVelocidade, rb.linearVelocity.y);
+        jogador.SetVelocidade(xInput * jogador.andarVelocidade, rb.linearVelocity.y);
 
         if(xInput == 0 || jogador.paredeDetectado()) 
             maquina.MudarState(jogador.inativo);

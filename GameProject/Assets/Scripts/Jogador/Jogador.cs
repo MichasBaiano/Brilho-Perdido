@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Jogador : MonoBehaviour
+public class Jogador : Entidade
 {
 
     [Header ("Dados da Movimentacao")]
@@ -15,21 +15,6 @@ public class Jogador : MonoBehaviour
     public float dashDuracao;
     public float dashDirecao {  get; private set; }
 
-    [Header("Colisao Info")]
-    [SerializeField] private Transform chaoCheck;
-    [SerializeField] private Transform paredeCheck;
-    [SerializeField] private float chaoCheckDistancia;
-    [SerializeField] private float paredeCheckDistancia;
-    [SerializeField] private LayerMask eChao; 
-
-    public int caraDirecao {  get; private set; }
-    private bool caraDireita = true;
-
-    #region Components
-    public Animator anim {  get; private set; }
-    public Rigidbody2D rb {  get; private set; }
-    #endregion
-
     #region States
     public JogadorStateMachine maquina  { get; private set; }
     public JogadorIdleState inativo{ get; private set; }
@@ -41,8 +26,10 @@ public class Jogador : MonoBehaviour
     public JogadorWallJumpState wallPulo { get; private set; }
     #endregion
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         maquina =  new JogadorStateMachine();
 
         inativo = new JogadorIdleState(this, maquina, "inativo");
@@ -53,20 +40,18 @@ public class Jogador : MonoBehaviour
         wall = new JogadorWallSlideState(this, maquina, "wall");
         wallPulo = new JogadorWallJumpState(this, maquina, "pulo");
 
-         caraDirecao = 1;
     }
 
-    private void Start()
+    protected override void Start()
     {
-
-        anim = GetComponentInChildren<Animator>();
-        rb = GetComponent<Rigidbody2D>();
-
+        base.Start();
         maquina.Initialize(inativo);
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
+
         maquina.atualState.Update();
         checkDashInput();
     }
@@ -89,34 +74,5 @@ public class Jogador : MonoBehaviour
 
             maquina.MudarState(dash);
         }
-    }
-
-    public void setVelocidade(float _xVelocidade, float _yVelocidade)
-    {
-        rb.linearVelocity = new Vector2(_xVelocidade, _yVelocidade);
-        FlipController(_xVelocidade);
-    }
-    public bool chaoDetectado() => Physics2D.Raycast(chaoCheck.position, Vector2.down, chaoCheckDistancia, eChao);
-    public bool paredeDetectado() => Physics2D.Raycast(paredeCheck.position, Vector2.right * caraDirecao, paredeCheckDistancia, eChao);
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.DrawLine(chaoCheck.position, new Vector3(chaoCheck.position.x, chaoCheck.position.y - chaoCheckDistancia));
-        Gizmos.DrawLine(paredeCheck.position, new Vector3(paredeCheck.position.x + paredeCheckDistancia, paredeCheck.position.y));
-    }
-
-    public void Flip()
-    {
-        caraDirecao = caraDirecao * -1;
-        caraDireita = !caraDireita;
-        transform.Rotate(0, 180,0);
-    }
-
-    public void FlipController(float _x)
-    {
-        if (_x > 0 && !caraDireita)
-            Flip();
-        else if (_x < 0 && caraDireita)
-            Flip();
     }
 }
