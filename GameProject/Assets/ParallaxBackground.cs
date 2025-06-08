@@ -2,20 +2,31 @@ using UnityEngine;
 
 public class ParallaxBackground : MonoBehaviour
 {
-    [SerializeField] private Transform cam; 
+    private GameObject cam; 
     [SerializeField] private float parallaxEffect = 0.5f;
 
-    private Vector3 lastCamPosition;
+    private float xPosicao;
+    private float comprimento;
 
     void Start()
     {
-        lastCamPosition = cam.position;
+        cam = GameObject.Find("Main Camera");
+
+        comprimento = GetComponentInChildren<SpriteRenderer>().bounds.size.x;
+        xPosicao = transform.position.x;
     }
 
     void LateUpdate()
     {
-        Vector3 deltaMovement = cam.position - lastCamPosition;
-        transform.position += new Vector3(deltaMovement.x * parallaxEffect, deltaMovement.y * parallaxEffect, transform.position.z);
-        lastCamPosition = cam.position;
+        float distanceToMove = cam.transform.position.x * parallaxEffect;
+        float distanceMoved = cam.transform.position.x * (1 - parallaxEffect);
+
+        transform.position = new Vector3(xPosicao + distanceToMove,transform.position.y, transform.position.z);
+
+        if (distanceMoved > xPosicao + comprimento)
+            xPosicao = xPosicao + comprimento;
+        else if (distanceMoved < xPosicao - comprimento)
+            xPosicao = xPosicao - comprimento;
+
     }
 }
