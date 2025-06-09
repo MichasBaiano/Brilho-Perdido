@@ -1,0 +1,33 @@
+using UnityEngine;
+
+public class Inimigo1MoveState : InimigoState
+{
+    private Inimigo1 inimigo;
+    public Inimigo1MoveState(Inimigo _inimigoBase, InimigoStateMachine _maquina, string _nomeAnimation, Inimigo1 _inimigo) : base(_inimigoBase, _maquina, _nomeAnimation)
+    {
+        this.inimigo = _inimigo;
+    }
+
+    public override void Enter()
+    {
+        base.Enter();
+    }
+
+    public override void Exit()
+    {
+        base.Exit();
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        inimigo.SetVelocidade(2 * inimigo.caraDirecao, inimigo.rb.linearVelocityY);
+
+        if (inimigo.paredeDetectado() || !inimigo.chaoDetectado())
+        {
+            inimigo.Flip();
+            maquina.MudarState(inimigo.inativo);
+        }
+    }
+}

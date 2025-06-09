@@ -1,19 +1,18 @@
-using UnityEngine;
+ using UnityEngine;
 
-public class Inimigo : MonoBehaviour 
+public class Inimigo : Entidade 
 {
-    public Rigidbody2D rb {  get; private set; }
-    public Animator animator { get; private set; }
-
     public InimigoStateMachine maquina { get; private set; }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         maquina = new InimigoStateMachine();
     }
 
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         maquina.atualState.Update();
     }
 }
