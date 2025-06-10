@@ -2,6 +2,9 @@
 
 public class Inimigo : Entidade 
 {
+    [Header ("Move Info")]
+    public float moveSpeed;
+    public float idleTime;
     public InimigoStateMachine maquina { get; private set; }
 
     protected override void Awake()

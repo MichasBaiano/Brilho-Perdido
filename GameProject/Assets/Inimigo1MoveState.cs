@@ -22,11 +22,12 @@ public class Inimigo1MoveState : InimigoState
     {
         base.Update();
 
-        inimigo.SetVelocidade(2 * inimigo.caraDirecao, inimigo.rb.linearVelocityY);
+        inimigo.SetVelocidade(inimigo.moveSpeed * inimigo.caraDirecao, inimigo.rb.linearVelocityY);
 
         if (inimigo.paredeDetectado() || !inimigo.chaoDetectado())
         {
             inimigo.Flip();
+            inimigo.ZeroVelocity();
             maquina.MudarState(inimigo.inativo);
         }
     }

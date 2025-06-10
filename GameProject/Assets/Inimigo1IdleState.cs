@@ -12,7 +12,7 @@ public class Inimigo1IdleState : InimigoState
     {
         base.Enter();
 
-        tempoState = 1f;
+        tempoState = inimigo.idleTime;
     }
 
     public override void Exit()
