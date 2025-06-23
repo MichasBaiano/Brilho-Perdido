@@ -7,6 +7,7 @@ public class Inimigo1 : Inimigo
 
     public Inimigo1IdleState inativo {  get; private set; }
     public Inimigo1MoveState mexido { get; private set; }
+    public InimigoBrigaState briga { get; private set; }
     #endregion
 
     protected override void Awake()
@@ -15,6 +16,7 @@ public class Inimigo1 : Inimigo
 
         inativo = new Inimigo1IdleState(this, maquina, "inativo", this);
         mexido = new Inimigo1MoveState(this, maquina, "mexido", this);
+        briga = new InimigoBrigaState(this, maquina, "mexido", this);
     }
 
     protected override void Start()

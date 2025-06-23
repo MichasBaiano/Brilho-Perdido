@@ -1,11 +1,9 @@
 using UnityEngine;
 
-public class Inimigo1MoveState : InimigoState
+public class Inimigo1MoveState : Inimigo1ChaoState
 {
-    private Inimigo1 inimigo;
-    public Inimigo1MoveState(Inimigo _inimigoBase, InimigoStateMachine _maquina, string _nomeAnimation, Inimigo1 _inimigo) : base(_inimigoBase, _maquina, _nomeAnimation)
+    public Inimigo1MoveState(Inimigo _inimigoBase, InimigoStateMachine _maquina, string _nomeAnimation, Inimigo1 _inimigo) : base(_inimigoBase, _maquina, _nomeAnimation, _inimigo)
     {
-        this.inimigo = _inimigo;
     }
 
     public override void Enter()

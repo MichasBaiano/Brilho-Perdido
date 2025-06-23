@@ -2,6 +2,7 @@
 
 public class Inimigo : Entidade 
 {
+    [SerializeField] protected LayerMask eJogador;
     [Header ("Move Info")]
     public float moveSpeed;
     public float idleTime;
@@ -17,5 +18,8 @@ public class Inimigo : Entidade
     {
         base.Update();
         maquina.atualState.Update();
+        
     }
+
+    public virtual RaycastHit2D isJogadorDetectado() => Physics2D.Raycast(paredeCheck.position, Vector2.right * caraDirecao, 50, eJogador);
 }
