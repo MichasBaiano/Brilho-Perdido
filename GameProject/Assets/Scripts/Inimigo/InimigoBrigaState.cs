@@ -26,6 +26,23 @@ public class InimigoBrigaState : InimigoState
     {
         base.Update();
 
+        if (Inimigo.isJogadorDetectado())
+        {
+            tempoState = Inimigo.tempoDeBriga;
+            if (Inimigo.isJogadorDetectado().distance < Inimigo.ataqueDistancia)
+            {
+                if (PodeAtacar())
+                    maquina.MudarState(Inimigo.ataque);
+            }
+        }
+        else
+        {
+            if(tempoState < 0 || Vector2.Distance(jogador.transform.position, Inimigo.transform.position) > 7)
+            {
+                maquina.MudarState(Inimigo.inativo);
+            }
+        }
+
         if (jogador.position.x > Inimigo.transform.position.x)
         {
             moveDir = 1;
@@ -37,4 +54,16 @@ public class InimigoBrigaState : InimigoState
 
         Inimigo.SetVelocidade(Inimigo.moveSpeed * moveDir, rb.linearVelocityY);
     }
+
+    private bool PodeAtacar()
+    {
+        if(Time.time >= Inimigo.ultimoAtaque + Inimigo.ataquaCooldown)
+        {
+            Inimigo.ultimoAtaque = Time.time;
+            return true;   
+        }
+
+        return false;   
+    }
+
 }
