@@ -10,7 +10,7 @@ public class JogadorIdleState : JogadorChaoState
     {
         base.Enter();
 
-        rb.linearVelocity = new Vector2(0, 0);
+        jogador.ZeroVelocity();
     }
 
     public override void Exit()
@@ -22,7 +22,7 @@ public class JogadorIdleState : JogadorChaoState
     {
         base.Update();
 
-        if(xInput != 0) { 
+        if(xInput != 0 && !jogador.isBusy) { 
             maquina.MudarState(jogador.mexido);
         }
     }
