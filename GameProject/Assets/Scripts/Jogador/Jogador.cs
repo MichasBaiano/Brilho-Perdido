@@ -1,9 +1,12 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class Jogador : Entidade
 {
-
+    [Header("Detalhes do Ataque")]
+    public Vector2[] attackMovement;
+    public bool isBusy {  get; private set; }
     [Header ("Dados da Movimentacao")]
     public float andarVelocidade = 12f;
     public float forcaPulo;
@@ -24,6 +27,7 @@ public class Jogador : Entidade
     public JogadorDashState dash { get; private set; }
     public JogadorWallSlideState wall { get; private set; }
     public JogadorWallJumpState wallPulo { get; private set; }
+    public JogadorAtaqueUmState ataqueUm{ get; private set; }
     #endregion
 
     protected override void Awake()
@@ -39,6 +43,7 @@ public class Jogador : Entidade
         dash = new JogadorDashState(this, maquina, "dash");
         wall = new JogadorWallSlideState(this, maquina, "wall");
         wallPulo = new JogadorWallJumpState(this, maquina, "pulo");
+        ataqueUm = new JogadorAtaqueUmState(this, maquina, "Ataque");
 
     }
 
@@ -56,6 +61,15 @@ public class Jogador : Entidade
         checkDashInput();
     }
 
+    public IEnumerator BusyFor(float _seconds)
+    {
+        isBusy = true;
+
+        yield return new WaitForSeconds(_seconds);
+        isBusy = false;
+    }
+
+    public void AnimationTrigger() => maquina.atualState.AnimationFinishTrigger();
 
     public void checkDashInput()
     {
