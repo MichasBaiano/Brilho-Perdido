@@ -517,7 +517,7 @@ MonoBehaviour:
   idleTime: 2
   tempoDeBriga: 3
   ataqueDistancia: 1
-  ataquaCooldown: 4
+  ataquaCooldown: 1
   ultimoAtaque: 0
 --- !u!4 &194965870
 Transform:
