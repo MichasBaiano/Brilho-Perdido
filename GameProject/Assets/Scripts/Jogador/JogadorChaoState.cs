@@ -20,9 +20,6 @@ public class JogadorChaoState : JogadorState
     {
         base.Update();
 
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-            maquina.MudarState(jogador.ataqueUm);
-
         if (!jogador.chaoDetectado())
             maquina.MudarState(jogador.ar);
 
