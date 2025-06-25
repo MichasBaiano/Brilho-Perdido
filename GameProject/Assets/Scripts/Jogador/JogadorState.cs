@@ -12,6 +12,7 @@ public class JogadorState
     private string nomeAnimation;
 
     protected float tempoState;
+    protected bool triggerCalled;
 
     public JogadorState(Jogador _jogador, JogadorStateMachine _maquina, string _nomeAnimation)
     {
@@ -24,6 +25,7 @@ public class JogadorState
     {
         jogador.anim.SetBool(nomeAnimation, true);
         rb = jogador.rb;
+        triggerCalled = false;
     }
 
     public virtual void Update()
@@ -38,5 +40,10 @@ public class JogadorState
     public virtual void Exit() 
     {
         jogador.anim.SetBool(nomeAnimation, false);
+    }
+
+    public virtual void AnimationFinishTrigger()
+    {
+        triggerCalled = true;
     }
 }
