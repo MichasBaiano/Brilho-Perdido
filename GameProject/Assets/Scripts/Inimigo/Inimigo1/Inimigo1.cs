@@ -9,6 +9,7 @@ public class Inimigo1 : Inimigo
     public Inimigo1MoveState mexido { get; private set; }
     public InimigoBrigaState briga { get; private set; }
     public Inimigo1AtaqueState ataque { get; private set; }
+    public Inimigo1StunnedState stun { get; private set; }
     #endregion
 
     protected override void Awake()
@@ -19,6 +20,7 @@ public class Inimigo1 : Inimigo
         mexido = new Inimigo1MoveState(this, maquina, "mexido", this);
         briga = new InimigoBrigaState(this, maquina, "mexido", this);
         ataque = new Inimigo1AtaqueState(this, maquina, "ataque", this);
+        stun = new Inimigo1StunnedState(this, maquina, "stun", this);
     }
 
     protected override void Start()
@@ -30,7 +32,20 @@ public class Inimigo1 : Inimigo
     protected override void Update()
     {
         base.Update();
+
+        if(Input.GetKeyDown(KeyCode.U))
+            maquina.MudarState(stun);
+
     }
 
+    public override bool CanBeStunned()
+    {
+        if(base.CanBeStunned())
+        {
+            maquina.MudarState(stun);
+            return true;
+        }
+        return false;
+    }
 
 }

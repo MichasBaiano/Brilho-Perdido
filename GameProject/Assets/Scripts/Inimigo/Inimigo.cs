@@ -4,6 +4,13 @@ using UnityEngine;
 public class Inimigo : Entidade 
 {
     [SerializeField] protected LayerMask eJogador;
+
+    [Header("Stunned Info")]
+    public float stunDuration;
+    public Vector2 stunDiraction;
+    protected bool canBeStunned;
+    [SerializeField] protected GameObject counterImage;
+
     [Header ("Move Info")]
     public float moveSpeed;
     public float idleTime;
@@ -28,7 +35,30 @@ public class Inimigo : Entidade
         
     }
 
-    public virtual void AnimacaoGatilhoFinal() => maquina.atualState.AnimacaoGatilhoFinal();
+    public virtual void OpenCounterWindow()
+    {
+        canBeStunned = true;
+        counterImage.SetActive(true);
+    }
+
+    public virtual void CloseCounterWindow()
+    {
+        canBeStunned = false;
+        counterImage.SetActive(false);
+    }
+
+    public virtual bool CanBeStunned()
+    {
+        if(canBeStunned)
+        {
+            CloseCounterWindow();
+            return true;
+        }
+
+        return false;
+    } 
+
+    public virtual void AnimationFinishTrigger() => maquina.atualState.AnimationFinishTrigger();
 
     public virtual RaycastHit2D isJogadorDetectado() => Physics2D.Raycast(paredeCheck.position, Vector2.right * caraDirecao, 50, eJogador);
 

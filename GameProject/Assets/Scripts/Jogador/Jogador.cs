@@ -6,6 +6,7 @@ public class Jogador : Entidade
 {
     [Header("Detalhes do Ataque")]
     public Vector2[] attackMovement;
+    public float counterAtaqueDuration = .2f;
     public bool isBusy {  get; private set; }
     [Header ("Dados da Movimentacao")]
     public float andarVelocidade = 12f;
@@ -28,6 +29,7 @@ public class Jogador : Entidade
     public JogadorWallSlideState wall { get; private set; }
     public JogadorWallJumpState wallPulo { get; private set; }
     public JogadorAtaqueUmState ataqueUm{ get; private set; }
+    public JogadorCounterAtaqueState counterAtaque {  get; private set; }
     #endregion
 
     protected override void Awake()
@@ -44,6 +46,7 @@ public class Jogador : Entidade
         wall = new JogadorWallSlideState(this, maquina, "wall");
         wallPulo = new JogadorWallJumpState(this, maquina, "pulo");
         ataqueUm = new JogadorAtaqueUmState(this, maquina, "Ataque");
+        counterAtaque = new JogadorCounterAtaqueState(this, maquina, "CounterAtaque");
 
     }
 

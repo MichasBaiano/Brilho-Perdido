@@ -20,6 +20,9 @@ public class JogadorChaoState : JogadorState
     {
         base.Update();
 
+        if (Input.GetKeyDown(KeyCode.Q))
+            maquina.MudarState(jogador.counterAtaque);
+
         if (Input.GetKeyDown(KeyCode.Mouse0))
             maquina.MudarState(jogador.ataqueUm);
 

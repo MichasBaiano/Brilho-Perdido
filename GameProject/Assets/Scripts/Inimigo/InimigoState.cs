@@ -37,7 +37,8 @@ public class InimigoState
         inimigoBase.anim.SetBool(nomeAnimation, false);
     }
 
-    public virtual void AnimacaoGatilhoFinal() {
-    triggerCalled = true;
+    public virtual void AnimationFinishTrigger() 
+    {
+        triggerCalled = true;
     }
 }
