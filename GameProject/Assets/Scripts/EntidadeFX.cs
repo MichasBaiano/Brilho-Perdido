@@ -27,8 +27,8 @@ public class EntidadeFX : MonoBehaviour
 
     private void RedColorBlink()
     {
-        if(sr.color != Color.blue)
-            sr.color = Color.blue;
+        if(sr.color != Color.white)
+            sr.color = Color.white;
         else
             sr.color = Color.red;
     }
@@ -36,7 +36,7 @@ public class EntidadeFX : MonoBehaviour
     private void CancelarRedBlink()
     {
         CancelInvoke();
-        sr.color = Color.blue;
+        sr.color = Color.white;
     }
 
 }
