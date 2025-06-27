@@ -14,7 +14,6 @@ public class Jogador : Entidade
 
     [Header("Dash Info")]
     [SerializeField] private float dashCooldown;
-    private float dashTempoUsado;
     public float dashVelocidade;
     public float dashDuracao;
     public float dashDirecao {  get; private set; }
@@ -79,11 +78,9 @@ public class Jogador : Entidade
         if (paredeDetectado())
             return;
 
-        dashTempoUsado -= Time.deltaTime;
 
-        if (Input.GetKeyDown(KeyCode.LeftShift) && dashTempoUsado < 0)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && SkillManager.instancia.dash.CanUseSkill())   
         {
-            dashTempoUsado = dashCooldown;
             dashDirecao = Input.GetAxisRaw("Horizontal");
 
             if (dashDirecao == 0)

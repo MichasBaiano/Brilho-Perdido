@@ -14,7 +14,7 @@ public class InimigoBrigaState : InimigoState
     {
         base.Enter();
 
-        jogador = GameObject.Find("Jogador").transform;
+        jogador = JogadorManager.instancia.jogador.transform;
     }
 
     public override void Exit()
