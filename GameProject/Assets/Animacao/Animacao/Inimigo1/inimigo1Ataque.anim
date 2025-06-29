@@ -24,7 +24,7 @@ AnimationClip:
       value: {fileID: 8562781613075832528, guid: 4f1ca7d1f4100a9478562574311fb6f0, type: 3}
     - time: 0.25
       value: {fileID: -5526662900685611152, guid: 4f1ca7d1f4100a9478562574311fb6f0, type: 3}
-    - time: 1
+    - time: 0.75
       value: {fileID: -1395481436321874183, guid: 4f1ca7d1f4100a9478562574311fb6f0, type: 3}
     attribute: m_Sprite
     path: 
@@ -56,7 +56,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.25
+    m_StopTime: 1
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -84,21 +84,21 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 0.5
-    functionName: AttackTrigger
-    data: 
-    objectReferenceParameter: {fileID: 0}
-    floatParameter: 0
-    intParameter: 0
-    messageOptions: 0
-  - time: 0.75
     functionName: CloseCounterWindow
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1
+  - time: 0.75
     functionName: AnimationTrigger
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 0.75
+    functionName: AttackTrigger
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
