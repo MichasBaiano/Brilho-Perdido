@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 2782840405592140870}
   - component: {fileID: 8937385386845108913}
   - component: {fileID: 8229424875389983995}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: espantalho
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -171,8 +171,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2db222c019ab83c43926dd499825f90a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knocbackDirection: {x: 0, y: 0}
-  knocbackDuration: 0
+  knocbackDirection: {x: 6, y: 5}
+  knocbackDuration: 0.07
   attackCheck: {fileID: 9127164567232155532}
   attackCheckRadius: 0.47
   chaoCheck: {fileID: 6831171957019061809}
@@ -188,11 +188,12 @@ MonoBehaviour:
   stunDuration: 0
   stunDiraction: {x: 0, y: 0}
   counterImage: {fileID: 2893994430840362453}
-  moveSpeed: 0
+  moveSpeed: 1.2
   idleTime: 0
-  tempoDeBriga: 0
+  tempoDeBriga: 5
   ataqueDistancia: 0
   ataquaCooldown: 0
+  distanciaBriga: 2
   ultimoAtaque: 0
 --- !u!50 &2782840405592140870
 Rigidbody2D:
@@ -255,7 +256,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.031070322, y: -0.23061538}
+  m_Offset: {x: -0.031070322, y: -0.22903466}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -265,7 +266,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.93785936, y: 1.2279992}
+  m_Size: {x: 0.93785936, y: 1.2248378}
   m_EdgeRadius: 0
 --- !u!114 &8229424875389983995
 MonoBehaviour:
@@ -306,7 +307,7 @@ Transform:
   m_GameObject: {fileID: 3895121690509632417}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.634, y: -0.115, z: 0}
+  m_LocalPosition: {x: 0.7, y: -0.115, z: 0}
   m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -354,7 +355,7 @@ GameObject:
   - component: {fileID: 7204076860097539093}
   - component: {fileID: 4805246098078462981}
   - component: {fileID: 257124575513145168}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: espanta_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +423,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 3986318842218197874, guid: 476cd1e649ab2c246b597de3f230bf80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.18, y: 0.22}

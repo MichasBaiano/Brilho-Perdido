@@ -19,6 +19,7 @@ public class Inimigo : Entidade
     [Header("Ataque info")]
     public float ataqueDistancia;
     public float ataquaCooldown;
+    public float distanciaBriga;
     [HideInInspector] public float ultimoAtaque;
     public InimigoStateMachine maquina { get; private set; }
 
@@ -60,7 +61,7 @@ public class Inimigo : Entidade
 
     public virtual void AnimationFinishTrigger() => maquina.atualState.AnimationFinishTrigger();
 
-    public virtual RaycastHit2D isJogadorDetectado() => Physics2D.Raycast(paredeCheck.position, Vector2.right * caraDirecao, 50, eJogador);
+    public virtual RaycastHit2D isJogadorDetectado() => Physics2D.Raycast(paredeCheck.position, Vector2.right * caraDirecao, distanciaBriga, eJogador);
 
     protected override void OnDrawGizmos()
     {
