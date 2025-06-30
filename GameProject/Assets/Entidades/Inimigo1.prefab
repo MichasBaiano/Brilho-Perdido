@@ -339,7 +339,7 @@ MonoBehaviour:
   eJogador:
     serializedVersion: 2
     m_Bits: 64
-  stunDuration: 1
+  stunDuration: 1.3
   stunDiraction: {x: 1, y: 10}
   counterImage: {fileID: 1649108152904853873}
   moveSpeed: 1.5
