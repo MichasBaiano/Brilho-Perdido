@@ -4,6 +4,7 @@ public class Espantalho : Inimigo
 {
     public EspantalhoIdle inativo { get; private set; }
     public EspantalhoBrigaState briga { get; private set; }
+    public EspantalhoAtaqueState ataque { get; private set; }
 
     protected override void Awake()
     {
@@ -11,6 +12,7 @@ public class Espantalho : Inimigo
 
         inativo = new EspantalhoIdle(this, maquina, "inativo", this);
         briga = new EspantalhoBrigaState(this, maquina, "briga", this);
+        ataque= new EspantalhoAtaqueState(this, maquina, "ataque", this);
     }
 
     protected override void Start()

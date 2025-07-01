@@ -6,10 +6,16 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private string nomeDaCena = "fase1real";
     [SerializeField] private FadeTela fade;
+    [SerializeField] private AudioManager audioManager;
+
+    public void Awake()
+    {
+        audioManager.PlayBGM(1);
+    }
 
     public void novoJogo()
     {
-        StartCoroutine(CarregarTelaComFade(2f));
+        StartCoroutine(CarregarTelaComFade(1.5f));
         
     }
 
