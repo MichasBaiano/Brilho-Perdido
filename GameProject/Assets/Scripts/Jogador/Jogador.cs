@@ -18,6 +18,10 @@ public class Jogador : Entidade
     public float dashDuracao;
     public float dashDirecao {  get; private set; }
 
+
+    public SkillManager skill {  get; private set; }
+
+
     #region States
     public JogadorStateMachine maquina  { get; private set; }
     public JogadorIdleState inativo{ get; private set; }
@@ -52,6 +56,9 @@ public class Jogador : Entidade
     protected override void Start()
     {
         base.Start();
+
+        skill = SkillManager.instancia;
+
         maquina.Initialize(inativo);
     }
 

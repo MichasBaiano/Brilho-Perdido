@@ -10,6 +10,8 @@ public class JogadorDashState : JogadorState
     {
         base.Enter();
 
+        jogador.skill.clone.CriarClone(jogador.transform);
+
         tempoState = jogador.dashDuracao;
     }
 
