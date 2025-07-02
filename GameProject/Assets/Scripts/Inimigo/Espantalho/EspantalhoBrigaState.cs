@@ -30,8 +30,8 @@ public class EspantalhoBrigaState : InimigoState
             tempoState = inimigo.tempoDeBriga;
             if (inimigo.isJogadorDetectado().distance < inimigo.ataqueDistancia)
             {
-                return;
-                // aqui vai o ataque
+                if (PodeAtacar())
+                    maquina.MudarState(inimigo.ataque);
             }
         }
         else
@@ -52,5 +52,16 @@ public class EspantalhoBrigaState : InimigoState
         }
 
         inimigo.SetVelocidade(inimigo.moveSpeed * moveDir, rb.linearVelocityY);
+    }
+
+    private bool PodeAtacar()
+    {
+        if (Time.time >= inimigo.ultimoAtaque + inimigo.ataquaCooldown)
+        {
+            inimigo.ultimoAtaque = Time.time;
+            return true;
+        }
+
+        return false;
     }
 }
