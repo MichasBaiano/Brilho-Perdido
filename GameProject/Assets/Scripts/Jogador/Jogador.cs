@@ -33,6 +33,8 @@ public class Jogador : Entidade
     public JogadorWallJumpState wallPulo { get; private set; }
     public JogadorAtaqueUmState ataqueUm{ get; private set; }
     public JogadorCounterAtaqueState counterAtaque {  get; private set; }
+    public JogadorAimSwordState aimSword { get; private set; }
+    public JogadorCatchSwordState catchSword { get; private set; }
     #endregion
 
     protected override void Awake()
@@ -48,9 +50,12 @@ public class Jogador : Entidade
         dash = new JogadorDashState(this, maquina, "dash");
         wall = new JogadorWallSlideState(this, maquina, "wall");
         wallPulo = new JogadorWallJumpState(this, maquina, "pulo");
+
         ataqueUm = new JogadorAtaqueUmState(this, maquina, "Ataque");
         counterAtaque = new JogadorCounterAtaqueState(this, maquina, "CounterAtaque");
 
+        aimSword = new JogadorAimSwordState(this, maquina, "AimSword");
+        catchSword = new JogadorCatchSwordState(this, maquina, "CatchSword");
     }
 
     protected override void Start()

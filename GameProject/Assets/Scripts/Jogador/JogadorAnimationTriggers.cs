@@ -19,4 +19,9 @@ public class JogadorAnimationTriggers : MonoBehaviour
                 hit.GetComponent<Inimigo>().Damage();
         }
     }
+
+    private void ThrowSword()
+    {
+        SkillManager.instancia.sword.CreateSword();
+    }
 }
