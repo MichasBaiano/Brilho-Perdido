@@ -43,7 +43,7 @@ public class Sword_Skill : Skill
         GameObject newSword = Instantiate(swordPrefab, jogador.transform.position, transform.rotation);
         Sword_Skill_Controller newSwordScript = newSword.GetComponent<Sword_Skill_Controller>();
 
-        newSwordScript.SetupSword(launchForce, swordGravity);
+        newSwordScript.SetupSword(finalDir, swordGravity);
 
         DotsActive(false);
     }
@@ -54,6 +54,8 @@ public class Sword_Skill : Skill
         Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         Vector2 direction = mousePosition - jogadorPosition;
 
+
+        
         return direction;
 
     }
