@@ -132,6 +132,7 @@ GameObject:
   - component: {fileID: 2782840405592140870}
   - component: {fileID: 8937385386845108913}
   - component: {fileID: 8229424875389983995}
+  - component: {fileID: 2708603792927211523}
   m_Layer: 7
   m_Name: espantalho
   m_TagString: Untagged
@@ -282,6 +283,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashDuration: 0.6
   hitMaterial: {fileID: 2100000, guid: b6bd539aa2c719a429060dca97acd729, type: 2}
+--- !u!114 &2708603792927211523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3315847027428835258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb4695d12557e94bbd9c949c2e5d71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano:
+    valorBase: 15
+  vidaMaxima:
+    valorBase: 50
+  vidaAtual: 0
 --- !u!1 &3895121690509632417
 GameObject:
   m_ObjectHideFlags: 0

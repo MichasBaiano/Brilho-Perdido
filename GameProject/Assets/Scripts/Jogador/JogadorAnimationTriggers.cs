@@ -16,7 +16,11 @@ public class JogadorAnimationTriggers : MonoBehaviour
         foreach (var hit in colliders)
         {
             if (hit.GetComponent<Inimigo>() != null)
+            {
                 hit.GetComponent<Inimigo>().Damage();
+                hit.GetComponent<PersonagemStats>().TomarDano(jogador.stats.dano.getValor());
+            }
+
         }
     }
 
