@@ -13,7 +13,7 @@ public class EspantalhoIdle : InimigoState
     {
         base.Enter();
 
-        jogador = JogadorManager.instancia.transform;
+        jogador = JogadorManager.instancia.jogador.transform;
     }
 
     public override void Exit()
