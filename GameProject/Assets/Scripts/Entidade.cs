@@ -9,6 +9,7 @@ public class Entidade : MonoBehaviour
     public Rigidbody2D rb { get; private set; }
     public EntidadeFX fx { get; private set; }
     public PersonagemStats stats  { get; private set; }
+    public CapsuleCollider2D cd { get; private set; }
     #endregion
 
     [Header("KnockBack Info")]
@@ -39,6 +40,7 @@ public class Entidade : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         fx = GetComponentInChildren<EntidadeFX>();
         stats = GetComponent<PersonagemStats>();
+        cd = GetComponent<CapsuleCollider2D>();
     }
     protected virtual void Update()
     {
@@ -61,6 +63,11 @@ public class Entidade : MonoBehaviour
 
         yield return new WaitForSeconds(knocbackDuration);
         isKnocked = false;
+    }
+
+    public virtual void Morrer()
+    {
+
     }
 
     #region Velocidade

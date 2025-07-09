@@ -35,6 +35,7 @@ public class InimigoState
     public virtual void Exit()
     {
         inimigoBase.anim.SetBool(nomeAnimation, false);
+        inimigoBase.DessignarUltimaAnimBoolname(nomeAnimation);
     }
 
     public virtual void AnimationFinishTrigger() 

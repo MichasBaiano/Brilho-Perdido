@@ -22,6 +22,7 @@ public class Inimigo : Entidade
     public float distanciaBriga;
     [HideInInspector] public float ultimoAtaque;
     public InimigoStateMachine maquina { get; private set; }
+    public string ultimaAnimBoolname { get; private set; }
 
     protected override void Awake()
     {
@@ -34,6 +35,11 @@ public class Inimigo : Entidade
         base.Update();
         maquina.atualState.Update();
         
+    }
+
+    public virtual void DessignarUltimaAnimBoolname(string _ultimaAnimBoolname)
+    {
+        ultimaAnimBoolname = _ultimaAnimBoolname;
     }
 
     public virtual void OpenCounterWindow()

@@ -220,11 +220,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3254197799406272095, guid: 2770602613780b9408cc72e67171ae70, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.98308
+      value: -19.1
       objectReference: {fileID: 0}
     - target: {fileID: 3254197799406272095, guid: 2770602613780b9408cc72e67171ae70, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.4900007
+      value: -11.48
       objectReference: {fileID: 0}
     - target: {fileID: 3254197799406272095, guid: 2770602613780b9408cc72e67171ae70, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11940,7 +11940,6 @@ GameObject:
   m_Component:
   - component: {fileID: 639461570}
   - component: {fileID: 639461571}
-  - component: {fileID: 639461572}
   m_Layer: 0
   m_Name: espanta_0
   m_TagString: Untagged
@@ -12018,26 +12017,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &639461572
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 639461569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48355a7f89ea231478f36b09701dc62d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogo:
-    nome: Espanta
-    frases:
-    - "OI\t"
-    - SO ESPANTA
-    - SO ISSO MESMO RAI EMBORA
-  manager: {fileID: 733485538}
-  distanciaParaFalar: 3
 --- !u!1 &733485536
 GameObject:
   m_ObjectHideFlags: 0
@@ -24701,6 +24680,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1791497348}
   - component: {fileID: 1791497349}
+  - component: {fileID: 1791497350}
   m_Layer: 0
   m_Name: placacapelao_0
   m_TagString: Untagged
@@ -24778,6 +24758,24 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1791497350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1791497347}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48355a7f89ea231478f36b09701dc62d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogo:
+    nome: 'Placa:'
+    frases:
+    - "Dono: Capelao da Mata\u2122"
+  manager: {fileID: 733485538}
+  distanciaParaFalar: 3
 --- !u!1 &1793351445
 GameObject:
   m_ObjectHideFlags: 0
@@ -25322,7 +25320,7 @@ GameObject:
   - component: {fileID: 2084775855}
   - component: {fileID: 2084775858}
   m_Layer: 0
-  m_Name: baleiabase_0
+  m_Name: BALEIA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25650,6 +25648,14 @@ PrefabInstance:
     - target: {fileID: 2404815190978130154, guid: 287c5a3eb5b9f5d4290e88ace9904eef, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871978105323278335, guid: 287c5a3eb5b9f5d4290e88ace9904eef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -33.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 8871978105323278335, guid: 287c5a3eb5b9f5d4290e88ace9904eef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.81
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

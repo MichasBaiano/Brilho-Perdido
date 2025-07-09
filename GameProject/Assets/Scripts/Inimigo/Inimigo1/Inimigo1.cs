@@ -1,3 +1,4 @@
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Inimigo1 : Inimigo
@@ -10,6 +11,7 @@ public class Inimigo1 : Inimigo
     public InimigoBrigaState briga { get; private set; }
     public Inimigo1AtaqueState ataque { get; private set; }
     public Inimigo1StunnedState stun { get; private set; }
+    public Inimigo1DeathState morto { get; private set; }   
     #endregion
 
     protected override void Awake()
@@ -21,6 +23,7 @@ public class Inimigo1 : Inimigo
         briga = new InimigoBrigaState(this, maquina, "mexido", this);
         ataque = new Inimigo1AtaqueState(this, maquina, "ataque", this);
         stun = new Inimigo1StunnedState(this, maquina, "stun", this);
+        morto = new Inimigo1DeathState(this, maquina, "stun", this);
     }
 
     protected override void Start()
@@ -46,6 +49,12 @@ public class Inimigo1 : Inimigo
             return true;
         }
         return false;
+    }
+
+    public override void Morrer()
+    {
+        base.Morrer();
+        maquina.MudarState(morto);
     }
 
 }
