@@ -342,7 +342,7 @@ MonoBehaviour:
   - {fileID: 5644573513642382497}
   - {fileID: 6457709526684717916}
   tocarBGM: 1
-  bgmIndex: 0
+  bgmIndex: 3
 --- !u!1 &6262924403790932628
 GameObject:
   m_ObjectHideFlags: 0

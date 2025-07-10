@@ -36,9 +36,6 @@ public class Inimigo1 : Inimigo
     {
         base.Update();
 
-        if(Input.GetKeyDown(KeyCode.U))
-            maquina.MudarState(stun);
-
     }
 
     public override bool CanBeStunned()

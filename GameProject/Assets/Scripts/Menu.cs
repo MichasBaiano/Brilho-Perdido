@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private string nomeDaCena = "fase1real";
+    [SerializeField] private string nomeDaCena = "Tutorial";
     [SerializeField] private FadeTela fade;
     [SerializeField] private AudioManager audioManager;
 

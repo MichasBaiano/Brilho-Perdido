@@ -13,6 +13,7 @@ public class EspantalhoBrigaState : InimigoState
     public override void Enter()
     {
         base.Enter();
+
         jogador = JogadorManager.instancia.jogador.transform;
     }
 

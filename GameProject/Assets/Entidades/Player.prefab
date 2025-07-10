@@ -435,6 +435,7 @@ GameObject:
   - component: {fileID: 396156968881391287}
   - component: {fileID: 7824878394695036626}
   - component: {fileID: 6384167529410819601}
+  - component: {fileID: 9093323060944912302}
   m_Layer: 6
   m_Name: Jogador
   m_TagString: Untagged
@@ -573,3 +574,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flashDuration: 0.15
   hitMaterial: {fileID: 2100000, guid: b6bd539aa2c719a429060dca97acd729, type: 2}
+--- !u!114 &9093323060944912302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8379949249059827735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abb4695d12557e94bbd9c949c2e5d71e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dano:
+    valorBase: 20
+  vidaMaxima:
+    valorBase: 100
+  vidaAtual: 0
