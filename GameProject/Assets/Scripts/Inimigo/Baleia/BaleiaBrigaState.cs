@@ -17,6 +17,7 @@ public class BaleiaBrigaState : InimigoState
     public override void Exit()
     {
         base.Exit();
+        AudioManager.instance.PlayBGM(2);
     }
 
     public override void Update()
