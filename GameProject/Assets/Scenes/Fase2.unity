@@ -538,8 +538,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 693843183
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 2115978897144711606, guid: 15abb32c1782e3b4a96bbdfd46b5fc56, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -583,7 +583,7 @@ MonoBehaviour:
     nome: 'Placa:'
     frases:
     - Cuidado! Caverna a frente.
-  manager: {fileID: 0}
+  manager: {fileID: 7194385560046479746}
   distanciaParaFalar: 3
 --- !u!1001 &450544141
 PrefabInstance:

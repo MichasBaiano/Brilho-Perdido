@@ -1,7 +1,7 @@
 using UnityEngine;
 using TMPro;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class HUD : MonoBehaviour
 {
     public TextMeshProUGUI Vida;
     private PersonagemStats jogador;
@@ -16,6 +16,20 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vida.text = "Vida: " + jogador.vidaAtual;
+        if (jogador == null)
+        {
+            // Tenta pegar de novo (caso tenha sido carregado após o Start)
+            if (JogadorManager.instancia != null && JogadorManager.instancia.jogador != null)
+            {
+                jogador = JogadorManager.instancia.jogador.stats;
+            }
+            else
+            {
+                return; // Ainda não está pronto, sai do Update
+            }
+        }
+
+        string texto = "Vida: " + jogador.vidaAtual;
+        Vida.text = texto;
     }
 }
