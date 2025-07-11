@@ -6,11 +6,10 @@ public class Menu : MonoBehaviour
 {
     [SerializeField] private string nomeDaCena = "Tutorial";
     [SerializeField] private FadeTela fade;
-    [SerializeField] private AudioManager audioManager;
 
     public void Awake()
     {
-        audioManager.PlayBGM(1);
+        
     }
 
     public void novoJogo()

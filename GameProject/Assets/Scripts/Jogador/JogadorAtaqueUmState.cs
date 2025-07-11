@@ -14,6 +14,7 @@ public class JogadorAtaqueUmState : JogadorState
     public override void Enter()
     {
         base.Enter();
+        AudioManager.instance.PlaySFX(5);
 
         xInput = 0;
 

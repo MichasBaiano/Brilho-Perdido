@@ -11,7 +11,7 @@ public class AudioManager : MonoBehaviour
 
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null)
         {
             Destroy(instance); 
         }
@@ -23,6 +23,7 @@ public class AudioManager : MonoBehaviour
 
     private void Update()
     {
+        
         if (!tocarBGM)
         {
             PararTodosBGM();

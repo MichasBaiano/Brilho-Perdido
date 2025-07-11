@@ -22,11 +22,16 @@ public class Inimigo : Entidade
     public float distanciaBriga;
     [HideInInspector] public float ultimoAtaque;
     public InimigoStateMachine maquina { get; private set; }
-    public string ultimaAnimBoolname { get; private set; }
 
+    protected override void Start()
+    {
+        base.Start();
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Inimigo"), LayerMask.NameToLayer("Inimigo"));
+    }
     protected override void Awake()
     {
         base.Awake();
+        gameObject.layer = LayerMask.NameToLayer("Inimigo");
         maquina = new InimigoStateMachine();
     }
 
@@ -37,10 +42,6 @@ public class Inimigo : Entidade
         
     }
 
-    public virtual void DessignarUltimaAnimBoolname(string _ultimaAnimBoolname)
-    {
-        ultimaAnimBoolname = _ultimaAnimBoolname;
-    }
 
     public virtual void OpenCounterWindow()
     {

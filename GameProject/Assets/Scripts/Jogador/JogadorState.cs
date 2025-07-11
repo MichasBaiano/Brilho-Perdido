@@ -40,6 +40,7 @@ public class JogadorState
     public virtual void Exit() 
     {
         jogador.anim.SetBool(nomeAnimation, false);
+        jogador.DessignarUltimaAnimBoolname(nomeAnimation);
     }
 
     public virtual void AnimationFinishTrigger()

@@ -3,6 +3,7 @@ using UnityEngine;
 public class Inimigo1AtaqueState : InimigoState
 {
     private Inimigo1 inimigo;
+    
     public Inimigo1AtaqueState(Inimigo _inimigoBase, InimigoStateMachine _maquina, string _nomeAnimation, Inimigo1 _inimigo1) : base(_inimigoBase, _maquina, _nomeAnimation)
     {
         this.inimigo = _inimigo1;
@@ -11,6 +12,7 @@ public class Inimigo1AtaqueState : InimigoState
     public override void Enter()
     {
         base.Enter();
+        AudioManager.instance.PlaySFX(2);
     }
 
     public override void Exit()
