@@ -11,6 +11,7 @@ public class EspantalhoAtaqueState : InimigoState
     public override void Enter()
     {
         base.Enter();
+        AudioManager.instance.PlaySFX(2);
     }
 
     public override void Exit()

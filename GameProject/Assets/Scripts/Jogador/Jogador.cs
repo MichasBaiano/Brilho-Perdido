@@ -33,8 +33,9 @@ public class Jogador : Entidade
     public JogadorWallJumpState wallPulo { get; private set; }
     public JogadorAtaqueUmState ataqueUm{ get; private set; }
     public JogadorCounterAtaqueState counterAtaque {  get; private set; }
-    public JogadorAimSwordState aimSword { get; private set; }
-    public JogadorCatchSwordState catchSword { get; private set; }
+
+    public JogadorDeathState morto { get; private set; }
+    
     #endregion
 
     protected override void Awake()
@@ -54,8 +55,7 @@ public class Jogador : Entidade
         ataqueUm = new JogadorAtaqueUmState(this, maquina, "Ataque");
         counterAtaque = new JogadorCounterAtaqueState(this, maquina, "CounterAtaque");
 
-        aimSword = new JogadorAimSwordState(this, maquina, "AimSword");
-        catchSword = new JogadorCatchSwordState(this, maquina, "CatchSword");
+        morto = new JogadorDeathState(this, maquina, "inativo");
     }
 
     protected override void Start()
@@ -100,5 +100,11 @@ public class Jogador : Entidade
 
             maquina.MudarState(dash);
         }
+    }
+
+    public override void Morrer()
+    {
+        base.Morrer();
+        maquina.MudarState(morto);
     }
 }

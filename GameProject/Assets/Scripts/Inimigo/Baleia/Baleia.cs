@@ -13,6 +13,7 @@ public class Baleia : Inimigo
     protected override void Awake()
     {
         base.Awake();
+        gameObject.layer = LayerMask.NameToLayer("Default");
         morto = new BaleiaDeath(this, maquina, "inativo", this);
         inativo = new BaleiaIdleState(this, maquina, "inativo", this);
         briga = new BaleiaBrigaState(this, maquina, "inativo", this);
@@ -23,6 +24,7 @@ public class Baleia : Inimigo
     {
         base.Start();
         maquina.Initialize(inativo);
+
     }
 
     protected override void Update()

@@ -255,17 +255,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 13443568}
   m_CullTransparentMesh: 1
---- !u!114 &133200895 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2542982815735696815, guid: d000219d4b6cb06489c238b52e143c6f, type: 3}
-  m_PrefabInstance: {fileID: 5380425531649175846}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a43a875293b5f54eb668df755e3f0a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &259473313
 GameObject:
   m_ObjectHideFlags: 0
@@ -568,7 +557,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nomeDaCena: Tutorial
   fade: {fileID: 326503467}
-  audioManager: {fileID: 133200895}
 --- !u!114 &670849508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -957,10 +945,6 @@ PrefabInstance:
     - target: {fileID: 1744687161756803492, guid: 5d5344852f659764eb71ee3c929e0083, type: 3}
       propertyPath: m_Name
       value: telaPreta
-      objectReference: {fileID: 0}
-    - target: {fileID: 1744687161756803492, guid: 5d5344852f659764eb71ee3c929e0083, type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

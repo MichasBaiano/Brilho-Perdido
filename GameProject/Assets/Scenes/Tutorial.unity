@@ -580,6 +580,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2542982815735696815, guid: d000219d4b6cb06489c238b52e143c6f, type: 3}
+      propertyPath: bgmIndex
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2691054495769968110, guid: d000219d4b6cb06489c238b52e143c6f, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -14512,6 +14516,10 @@ PrefabInstance:
       propertyPath: fade
       value: 
       objectReference: {fileID: 2022861501}
+    - target: {fileID: 9119704935558411514, guid: fe3115df5fb2658479f54acf250bb7d7, type: 3}
+      propertyPath: nomeDaCena
+      value: Fase2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

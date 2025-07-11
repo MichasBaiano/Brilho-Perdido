@@ -26,6 +26,8 @@ public class Entidade : MonoBehaviour
     [SerializeField] protected float paredeCheckDistancia;
     [SerializeField] protected LayerMask eChao;
 
+    public string ultimaAnimBoolname { get; private set; }
+
     public int caraDirecao { get; private set; }
     protected bool caraDireita = true;
 
@@ -45,6 +47,10 @@ public class Entidade : MonoBehaviour
     protected virtual void Update()
     {
         
+    }
+    public virtual void DessignarUltimaAnimBoolname(string _ultimaAnimBoolname)
+    {
+        ultimaAnimBoolname = _ultimaAnimBoolname;
     }
 
     public virtual void Damage()

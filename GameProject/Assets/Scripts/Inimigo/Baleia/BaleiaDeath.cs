@@ -12,6 +12,8 @@ public class BaleiaDeath : InimigoState
     {
         base.Enter();
 
+        AudioManager.instance.PlayBGM(2);
+
         inimigo.anim.SetBool(inimigo.ultimaAnimBoolname, true);
         inimigo.anim.speed = 0;
         inimigo.cd.enabled = false;

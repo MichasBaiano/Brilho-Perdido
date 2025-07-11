@@ -17,7 +17,7 @@ public class Inimigo1AnimationTriggers : MonoBehaviour
             if (hit.GetComponent<Jogador>() != null)
             {
                 hit.GetComponent<Jogador>().Damage();
-                hit.GetComponent<InimigoStats>().TomarDano(inimigo.stats.dano.getValor());
+                hit.GetComponent<PersonagemStats>().TomarDano(inimigo.stats.dano.getValor());
             }
         }
     }

@@ -9,6 +9,7 @@ public class JogadorWallJumpState : JogadorState
     public override void Enter()
     {
         base.Enter();
+        AudioManager.instance.PlaySFX(1);
 
         tempoState = .4f;
         jogador.SetVelocidade(5 * -jogador.caraDirecao, jogador.forcaPulo);

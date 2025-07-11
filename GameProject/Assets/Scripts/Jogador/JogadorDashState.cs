@@ -9,6 +9,7 @@ public class JogadorDashState : JogadorState
     public override void Enter()
     {
         base.Enter();
+        AudioManager.instance.PlaySFX(6);
 
         jogador.skill.clone.CriarClone(jogador.transform);
 

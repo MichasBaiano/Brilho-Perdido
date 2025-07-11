@@ -9,6 +9,7 @@ public class JogadorPuloState : JogadorState
     public override void Enter()
     {
         base.Enter();
+        AudioManager.instance.PlaySFX(1);
 
         rb.linearVelocity = new Vector2(rb.linearVelocityX, jogador.forcaPulo);
     }
